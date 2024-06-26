@@ -50,7 +50,18 @@
 *.sopc_builder
 *.summary
 *.tcl
-*.txt # Explicitly add any text files used
+*.txt
+*.temp
+*.vt
+*.vcd
+*.vo
+*.wlf
+*.dat
+*.dbs
+*.psm
+*.prw
+*_info
+*.xrf
 *~
 *example*
 *sopc_*
