@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY nBit2to1Mux
+set_global_assignment -name TOP_LEVEL_ENTITY MIPSRegisterFile
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:14:53  JUNE 25, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
@@ -57,6 +57,21 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -entity mipsregisterfile -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity nbit2to1mux -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity nbit2to1mux -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity nbit2to1mux -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -entity nbit2to1mux -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/altera/13.0sp1/LabTwo/NBit2to1MuxWaveform.vwf"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE SignExtend32.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ShLBy2for32bits.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ShL26to28.vwf
+set_global_assignment -name VHDL_FILE SignExtend32.vhd
+set_global_assignment -name VHDL_FILE ShLBy2for32bits.vhd
+set_global_assignment -name VHDL_FILE ShL26to28.vhd
 set_global_assignment -name SOURCE_FILE instrMem.cmp
 set_global_assignment -name SOURCE_FILE DataMem.cmp
 set_global_assignment -name QIP_FILE DataMem.qip
@@ -85,13 +100,5 @@ set_global_assignment -name QIP_FILE instrMem.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE InstrMemWaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE DataMemWaveform.vwf
 set_global_assignment -name VHDL_FILE nBit2to1Mux.vhd
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE NBit2to1MuxWaveform.vwf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity nbit2to1mux -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity nbit2to1mux -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity nbit2to1mux -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -entity nbit2to1mux -section_id Top
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/altera/13.0sp1/LabTwo/NBit2to1MuxWaveform.vwf"
+set_global_assignment -name SOURCE_FILE db/LabTwo.cmp.rdb
