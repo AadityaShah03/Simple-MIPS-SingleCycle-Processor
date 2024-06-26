@@ -83,9 +83,9 @@ set_global_assignment -name VHDL_FILE MIPSRegisterFile.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE MIPSFILEREGISTERWaveform.vwf
 set_global_assignment -name QIP_FILE instrMem.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE InstrMemWaveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE DataMemWaveform.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE DataMemWaveform.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/altera/13.0sp1/LabTwo/DataMemWaveform.vwf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/altera/13.0sp1/LabTwo/DataMemWaveform.vwf"

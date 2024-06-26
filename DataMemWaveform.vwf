@@ -576,13 +576,15 @@ TRANSITION_LIST("wren")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 40.4;
+		LEVEL 1 FOR 39.6;
 		NODE
 		{
-			REPEAT = 12;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
+			REPEAT = 7;
+			LEVEL 0 FOR 80.4;
+			LEVEL 1 FOR 39.6;
 		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 80.0;
 	}
 }
 

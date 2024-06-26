@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "06/26/2024 15:20:44"
+// DATE "06/26/2024 18:52:32"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -448,13 +448,13 @@ defparam \altsyncram_component|auto_generated|ram_block1a0 .data_interleave_offs
 defparam \altsyncram_component|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
 defparam \altsyncram_component|auto_generated|ram_block1a0 .init_file = "DataMemory.mif";
 defparam \altsyncram_component|auto_generated|ram_block1a0 .init_file_layout = "port_a";
-defparam \altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "altsyncram:altsyncram_component|altsyncram_3uh1:auto_generated|ALTSYNCRAM";
+defparam \altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "altsyncram:altsyncram_component|altsyncram_oki1:auto_generated|ALTSYNCRAM";
 defparam \altsyncram_component|auto_generated|ram_block1a0 .operation_mode = "single_port";
 defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_address_clear = "none";
 defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_address_width = 8;
 defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
 defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
-defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clock = "clock0";
+defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clock = "none";
 defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_data_width = 18;
 defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_first_address = 0;
 defparam \altsyncram_component|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
