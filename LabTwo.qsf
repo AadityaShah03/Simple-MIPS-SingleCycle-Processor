@@ -99,6 +99,11 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE NBit2to1MuxWaveform.vwf
 set_global_assignment -name SOURCE_FILE db/LabTwo.cmp.rdb
 set_global_assignment -name VHDL_FILE combinePC4andShL2.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE combinePC4andShL2.vwf
+set_global_assignment -name BDF_FILE TopLevelEntity.bdf
+set_global_assignment -name VHDL_FILE fourin32Bits.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE 4in32Waveform.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/altera/13.0sp1/LabTwo/4in32Waveform.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE combinePC4andShL2.vwf
 set_global_assignment -name VHDL_FILE ControlUnit.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
