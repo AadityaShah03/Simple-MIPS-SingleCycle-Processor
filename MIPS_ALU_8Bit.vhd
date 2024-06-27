@@ -75,11 +75,11 @@ begin
       n => 8
     )
     port map (
-      sel0 => aluop(1),
-      sel1 => aluop(0),
+      sel0 => aluop(0),
+      sel1 => aluop(1),
       in0  => aluresult,
-      in1  => andresult,
-      in2  => aluresult,
+      in1  => aluresult,
+      in2  => andresult,
       in3  => orresult,
       y    => muxout
     );
