@@ -62,9 +62,11 @@
 *.prw
 *_info
 *.xrf
+*.do
 *~
 *example*
 *sopc_*
+*transcript*
 # *.sdc # I want those timing files
 
 # ignore Quartus II generated folders
@@ -76,5 +78,9 @@
 */*_sim/
 incremental_db/
 db/
+greybox_tmp/
+simulation/modelsim/
+simulation/qsim/
+simulation/qsim/
 _output_files/
 PLLJ_PLLSPE_INFO.txt
