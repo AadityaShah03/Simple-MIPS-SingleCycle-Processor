@@ -18,7 +18,7 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 10:21:25  June 27, 2024
+# Date created = 17:00:59  June 27, 2024
 #
 # -------------------------------------------------------------------------- #
 #
@@ -40,7 +40,7 @@ set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY TopLevelEntity
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:21:25  JUNE 27, 2024"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:00:59  JUNE 27, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -49,15 +49,14 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_WAVEFORM_FILE TopLevelWaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE SignExtend32.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE ShLBy2for32bits.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE ShL26to28.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE NbitMuxWaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE NBitDregWaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE NbitALUWaveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE NBit8to1MuxWaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE NBit2to1MuxWaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE MIPSFILEREGISTERWaveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE InstrMemWaveform.vwf
@@ -77,6 +76,7 @@ set_global_assignment -name SOURCE_FILE .gitignore
 set_global_assignment -name BSF_FILE SignExtend32.bsf
 set_global_assignment -name BSF_FILE ShLBy2for32bits.bsf
 set_global_assignment -name BSF_FILE ShL26to28.bsf
+set_global_assignment -name BSF_FILE nbitmux8to1.bsf
 set_global_assignment -name BSF_FILE nbitmux4to1.bsf
 set_global_assignment -name BSF_FILE nbitaddsub.bsf
 set_global_assignment -name BSF_FILE nbit2to1mux.bsf
@@ -88,9 +88,11 @@ set_global_assignment -name BSF_FILE mipsregisterfile.bsf
 set_global_assignment -name BSF_FILE mips_alu_8bit.bsf
 set_global_assignment -name BSF_FILE instrMem.bsf
 set_global_assignment -name BSF_FILE full_adder.bsf
+set_global_assignment -name BSF_FILE fourin32Bits.bsf
 set_global_assignment -name BSF_FILE enardff_2.bsf
 set_global_assignment -name BSF_FILE decoder_3to8.bsf
 set_global_assignment -name BSF_FILE DataMem.bsf
+set_global_assignment -name BSF_FILE controlunit.bsf
 set_global_assignment -name BSF_FILE combinePC4andShL2.bsf
 set_global_assignment -name SOURCE_FILE instrMem.cmp
 set_global_assignment -name SOURCE_FILE DataMem.cmp
@@ -101,6 +103,7 @@ set_global_assignment -name VHDL_FILE SignExtend32.vhd
 set_global_assignment -name VHDL_FILE ShLBy2for32bits.vhd
 set_global_assignment -name VHDL_FILE ShL26to28.vhd
 set_global_assignment -name VHDL_FILE Nbit_d_register.vhd
+set_global_assignment -name VHDL_FILE nbitmux8to1.vhd
 set_global_assignment -name VHDL_FILE nBitMux4to1.vhd
 set_global_assignment -name VHDL_FILE nBitAddSub.vhd
 set_global_assignment -name VHDL_FILE nBit2to1Mux.vhd
@@ -117,16 +120,25 @@ set_global_assignment -name VHDL_FILE decoder_3to8.vhd
 set_global_assignment -name VHDL_FILE DataMem.vhd
 set_global_assignment -name VHDL_FILE ControlUnit.vhd
 set_global_assignment -name VHDL_FILE combinePC4andShL2.vhd
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity controlunit -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity controlunit -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity controlunit -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -entity controlunit -section_id Top
-set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
-set_global_assignment -name VHDL_FILE nbitmux8to1.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE NBit8to1MuxWaveform.vwf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE TopLevelWaveform.vwf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_location_assignment PIN_J15 -to MuxOut[0]
+set_location_assignment PIN_H16 -to MuxOut[1]
+set_location_assignment PIN_J16 -to MuxOut[2]
+set_location_assignment PIN_H17 -to MuxOut[3]
+set_location_assignment PIN_F15 -to MuxOut[4]
+set_location_assignment PIN_G15 -to MuxOut[5]
+set_location_assignment PIN_G16 -to MuxOut[6]
+set_location_assignment PIN_H15 -to MuxOut[7]
+set_location_assignment PIN_R24 -to CLK
+set_location_assignment PIN_AA22 -to ValSelect[0]
+set_location_assignment PIN_Y24 -to ValSelect[1]
+set_location_assignment PIN_Y23 -to ValSelect[2]
+set_location_assignment PIN_N21 -to RST
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/altera/13.0sp1/LabTwo/TopLevelWaveform.vwf"
+set_global_assignment -name CDF_FILE ../output_files/output_files/Chain3.cdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

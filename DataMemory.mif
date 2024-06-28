@@ -21,9 +21,7 @@ ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
--- Default Memory Values
-[00..FF]: 00;
--- Initial Values
-00: 55;
-01: AA;
+	000  :   55;
+	001  :   AA;
+	[002..0FF]  :   00;
 END;
