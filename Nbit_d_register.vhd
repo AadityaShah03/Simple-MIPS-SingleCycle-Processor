@@ -19,16 +19,6 @@ end entity nbit_d_register;
 
 architecture structural of nbit_d_register is
 
-  component d_flipflop is
-    port (
-      d     : in    std_logic;
-      clk   : in    std_logic;
-      rst   : in    std_logic;
-      q     : out   std_logic;
-      q_not : out   std_logic
-    );
-  end component;
-
   component enardff_2 is
     port (
       i_resetbar : in    std_logic;

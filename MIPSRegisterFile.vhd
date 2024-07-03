@@ -11,7 +11,16 @@ entity mipsregisterfile is
     rt              : in    std_logic_vector(4 downto 0);
     writedata       : in    std_logic_vector(7 downto 0);
     readreg1        : out   std_logic_vector(7 downto 0);
-    readreg2        : out   std_logic_vector(7 downto 0)
+    readreg2        : out   std_logic_vector(7 downto 0);
+
+    reg1 : out   std_logic_vector(7 downto 0);
+    reg2 : out   std_logic_vector(7 downto 0);
+    reg3 : out   std_logic_vector(7 downto 0);
+    reg4 : out   std_logic_vector(7 downto 0);
+    reg5 : out   std_logic_vector(7 downto 0);
+    reg6 : out   std_logic_vector(7 downto 0);
+    reg7 : out   std_logic_vector(7 downto 0);
+    reg8 : out   std_logic_vector(7 downto 0)
   );
 end entity mipsregisterfile;
 
@@ -454,6 +463,15 @@ begin
       in7  => regout_8(7),
       y    => readreg2mux(7)
     );
+
+  reg1 <= regout_1;
+  reg2 <= regout_2;
+  reg3 <= regout_3;
+  reg4 <= regout_4;
+  reg5 <= regout_5;
+  reg6 <= regout_6;
+  reg7 <= regout_7;
+  reg8 <= regout_8;
 
   readreg1 <= readreg1mux;
   readreg2 <= readreg2mux;
